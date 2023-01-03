@@ -7,7 +7,7 @@ class Solution:
         z=0
         while element<=ItemLength:
             if item<ListLength:
-                if ord(strs[item][element])<= ord(strs[item+1][element]):
+                if (strs[item][element])<= (strs[item+1][element]):
                     item+=1
                 else:
                     z+=1
