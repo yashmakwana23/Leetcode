@@ -6,24 +6,19 @@
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head==None:
+        if head==None or head.next==None:
             return None
-        if head.next==None:
-            return None
+
         hasha={}
-        count={}
         z=0
         prev=ListNode(0,head)
         pointer=head
-        # nextpointer=head.next
         while pointer:
             if pointer not in hasha:
                 hasha[pointer]=prev
-                count[pointer]=z
                 z+=1
                 prev=pointer
                 pointer=pointer.next
-                # nextpointer=nextpointer.next
             else:
                 if hasha.get(pointer)!=prev:
                     return pointer
